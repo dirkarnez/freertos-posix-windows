@@ -40,6 +40,8 @@ file( GLOB FREERTOS_PLUS_POSIX_SOURCES
 
 add_executable( posix_demo
                 main.c
+                posix_demo.c
+                posix_demo.h
                 ${FREERTOS_PLUS_POSIX_SOURCES} )
 
 target_include_directories( posix_demo
