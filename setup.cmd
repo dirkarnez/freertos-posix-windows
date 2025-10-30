@@ -20,13 +20,13 @@ if exist %CMAKE_EXE% (
     echo cmake %CMAKE_EXE% found
 )
 
-set GCC_DIR=%PREFIX%\winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r1
+set GCC_DIR=%PREFIX%\x86_64-15.2.0-release-posix-seh-msvcrt-rt_v13-rev0
 set GCC_EXE=%GCC_DIR%\mingw64\bin\gcc.exe
 if not exist %GCC_EXE% (
 cd /d "%TEMP%" &&^
-%SystemRoot%\System32\curl.exe "https://github.com/brechtsanders/winlibs_mingw/releases/download/11.2.0-12.0.1-9.0.0-r1/winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r1.zip" -L -O &&^
-%SEVENZIP% x winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r1.zip -o"%GCC_DIR%" &&^
-del winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r1.zip
+%SystemRoot%\System32\curl.exe "https://github.com/niXman/mingw-builds-binaries/releases/download/15.2.0-rt_v13-rev0/x86_64-15.2.0-release-posix-seh-msvcrt-rt_v13-rev0.7z" -L -O &&^
+%SEVENZIP% x x86_64-15.2.0-release-posix-seh-msvcrt-rt_v13-rev0.7z -o"%GCC_DIR%" &&^
+del x86_64-15.2.0-release-posix-seh-msvcrt-rt_v13-rev0.7z
 )
 
 if exist %GCC_EXE% (
