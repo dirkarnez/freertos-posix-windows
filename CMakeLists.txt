@@ -46,7 +46,6 @@ add_executable( posix_demo
 
 target_include_directories( posix_demo
                             PRIVATE
-                            FreeRTOS\Source\portable\MSVC-MingW\portmacro.h
                             ${FREERTOS_PLUS_POSIX_PATH}/include
                             ${FREERTOS_PLUS_POSIX_PATH}/include/private
                             ${FREERTOS_PLUS_POSIX_PATH}/include/FreeRTOS_POSIX
