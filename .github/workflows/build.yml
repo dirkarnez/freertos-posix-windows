@@ -1,11 +1,11 @@
 name: cpp-cmake-mingw-prebuilt-release-actions-workflow
 on:
   push:
-    paths-ignore:
-      - 'README.md'
-    # Sequence of patterns matched against refs/tags
-    tags:
-      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+    # paths-ignore:
+    #   - 'README.md'
+    # # Sequence of patterns matched against refs/tags
+    # tags:
+    #   - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -46,6 +46,11 @@ jobs:
       - shell: cmd
         run: |
           dir /S
+
+      - shell: cmd
+        run: |
+          cd cmake-build &&^
+          posix_demo.exe
           
       - name: Archive Release
         uses: thedoctor0/zip-release@master
