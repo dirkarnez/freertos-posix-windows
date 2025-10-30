@@ -41,6 +41,7 @@
  * FreeRTOS API DOCUMENTATION AVAILABLE ON THE FreeRTOS.org WEB SITE.
  * http://www.freertos.org/a00110.html
  *----------------------------------------------------------*/
+#define posixconfigENABLE_SSIZE_T 0
 
 #define configUSE_PREEMPTION			1
 #define configTICK_RATE_HZ				( 1000 ) /* In this non-real time simulated environment the tick frequency has to be at least a multiple of the Win32 tick frequency, and therefore very slow. */
@@ -117,4 +118,5 @@ extern void vAssertCalled(const char * pcFile, uint32_t ulLine);
 #define configASSERT( x )    if( ( x ) == 0 ) vAssertCalled( __FILE__, __LINE__ )
 
 #endif /* FREERTOS_CONFIG_H */
+
 
