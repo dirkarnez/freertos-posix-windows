@@ -1,6 +1,6 @@
 cmake_minimum_required( VERSION 3.22 )
 
-project( posix_demo )
+project( "freertos-posix-windows" )
 
 include( FetchContent )
 
@@ -24,13 +24,13 @@ target_include_directories( freertos_config
 set( FREERTOS_HEAP "3" CACHE STRING "" FORCE )
 
 # Select the FreeRTOS port.
-    if(UNIX)
-        message(STATUS " Auto-Detected Unix, setting FREERTOS_PORT=GCC_POSIX")
-        set(FREERTOS_PORT GCC_POSIX CACHE STRING "FreeRTOS port name" FORCE)
-    elseif(MINGW)
-        message(STATUS " Auto-Detected MINGW, setting FREERTOS_PORT=MSVC_MINGW")
-        set(FREERTOS_PORT MSVC_MINGW CACHE STRING "FreeRTOS port name" FORCE)
-    endif()
+if(UNIX)
+    message(STATUS "Auto-Detected Unix, setting FREERTOS_PORT=GCC_POSIX")
+    set(FREERTOS_PORT GCC_POSIX CACHE STRING "FreeRTOS port name" FORCE)
+elseif(MINGW)
+    message(STATUS "Auto-Detected MINGW, setting FREERTOS_PORT=MSVC_MINGW")
+    set(FREERTOS_PORT MSVC_MINGW CACHE STRING "FreeRTOS port name" FORCE)
+endif()
 
 # Fetch FreeRTOS-Kernel.
 FetchContent_MakeAvailable( FreeRTOS_Kernel )
@@ -44,8 +44,10 @@ add_executable( posix_demo
 
 target_include_directories( posix_demo
                             PRIVATE
+                            FreeRTOS\Source\portable\MSVC-MingW\portmacro.h
                             ${FREERTOS_PLUS_POSIX_PATH}/include
                             ${FREERTOS_PLUS_POSIX_PATH}/include/private
+                            ${FREERTOS_PLUS_POSIX_PATH}/include/FreeRTOS_POSIX
                             ${FREERTOS_PLUS_POSIX_PATH}/FreeRTOS-Plus-POSIX/include
                             ${FREERTOS_PLUS_POSIX_PATH}/FreeRTOS-Plus-POSIX/include/portable
                             ${FREERTOS_PLUS_POSIX_PATH}/FreeRTOS-Plus-POSIX/include/portable/pc/windows )
