@@ -107,7 +107,7 @@ to exclude the API function. */
 format the raw data provided by the uxTaskGetSystemState() function in to human
 readable ASCII form.  See the notes in the implementation of vTaskList() within
 FreeRTOS/Source/tasks.c for limitations. */
-#define configUSE_STATS_FORMATTING_FUNCTIONS	1
+// #define configUSE_STATS_FORMATTING_FUNCTIONS	1
 
 /* Run time stats gathering definitions. */
 #define configGENERATE_RUN_TIME_STATS	0
@@ -117,3 +117,4 @@ extern void vAssertCalled(const char * pcFile, uint32_t ulLine);
 #define configASSERT( x )    if( ( x ) == 0 ) vAssertCalled( __FILE__, __LINE__ )
 
 #endif /* FREERTOS_CONFIG_H */
+
