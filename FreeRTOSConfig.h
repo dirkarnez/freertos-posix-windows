@@ -63,7 +63,7 @@
 #define configRECORD_STACK_HIGH_ADDRESS             1
 #define configUSE_MALLOC_FAILED_HOOK                0
 #define configUSE_POSIX_ERRNO                       1
-#define configKERNEL_PROVIDED_STATIC_MEMORY         1
+#define configKERNEL_PROVIDED_STATIC_MEMORY         0
 
 /* Software timer related configuration options.  The maximum possible task
  * priority is configMAX_PRIORITIES - 1.  The priority of the timer task is
