@@ -49,7 +49,7 @@ jobs:
 
       - shell: cmd
         run: |
-          .\run.cmd
+          .\local-run.cmd
           
       - name: Archive Release
         uses: thedoctor0/zip-release@master
