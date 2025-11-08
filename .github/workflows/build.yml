@@ -49,7 +49,9 @@ jobs:
 
       - shell: cmd
         run: |
-          .\local-run.cmd >nul 2>nul
+          curl https://github.com/dirkarnez/exec-timeout/releases/download/v1.0.0/exec-timeout-v1.0.0-windows-latest.zip -L -O &&^
+          7z x exec-timeout-v1.0.0-windows-latest.zip &&^
+          exec-timeout.exe 1800 "%CD%\cmake-build\posix_demo.exe"
           
       - name: Archive Release
         uses: thedoctor0/zip-release@master
