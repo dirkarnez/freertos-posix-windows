@@ -36,7 +36,12 @@
 * https://www.FreeRTOS.org/a00110.html
 *----------------------------------------------------------*/
 #define configUSE_STATIC_ALLOCATION 1
+
+#ifdef posixconfigENABLE_SSIZE_T
+  #undef posixconfigENABLE_SSIZE_T
+#endif
 #define posixconfigENABLE_SSIZE_T 0
+
 #define configUSE_PREEMPTION                        1
 #define configUSE_PORT_OPTIMISED_TASK_SELECTION     0
 #define configUSE_IDLE_HOOK                         0
@@ -120,5 +125,6 @@
  * intended to asserts() to fail, some some code is intended not to run if no
  * errors are present. */
 #define configASSERT( x )    if( ( x ) == 0 ) { taskDISABLE_INTERRUPTS(); for ( ;; ); }
+
 
 #endif /* FREERTOS_CONFIG_H */
