@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "freertos_posix.h": "c",
+        "fcntl.h": "c",
+        "errno.h": "c",
+        "pthread.h": "c",
+        "mqueue.h": "c",
+        "freertos.h": "c",
+        "posix_demo.h": "c"
+    }
+}

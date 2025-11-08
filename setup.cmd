@@ -2,8 +2,8 @@
 @echo off
 
 set DOWNLOADS_DIR=%USERPROFILE%\Downloads
-@REM set PREFIX=%DOWNLOADS_DIR%
-set PREFIX=D:\Softwares
+set PREFIX=%DOWNLOADS_DIR%
+@REM set PREFIX=D:\Softwares
 
 set SEVENZIP=C:\"Program Files"\7-Zip\7z.exe
 
