@@ -49,8 +49,7 @@ jobs:
 
       - shell: cmd
         run: |
-          cd cmake-build &&^
-          posix_demo.exe
+          .\run.cmd
           
       - name: Archive Release
         uses: thedoctor0/zip-release@master
